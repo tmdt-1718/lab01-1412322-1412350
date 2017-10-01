@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/about', to: "static#about"
+
   devise_for :users, :controllers => { :registrations => 'user/registrations' }
   root "users#show"
 

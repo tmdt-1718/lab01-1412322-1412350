@@ -1,6 +1,46 @@
-<% if current_user %>
-<div class="sidebar" data-background-color="white" data-active-color="danger">
-    <div class="sidebar-wrapper">
-    	</div>
- </div>
-<% end %>
+<div id="side-categories-menu">
+    <div class="avatar d-flex justify-content-center">
+        <%= image_tag asset_url("defaultavatar.png"), class:"img-circle img-no-padding img-responsive"%>
+    </div>
+    <div class="text-center">
+        Admin
+    </div>
+
+    <div id="side-search-form">
+        <div class="input-group">
+            <input type="text" class="form-control input-lg" placeholder="Search..." />
+            <span class="input-group-btn">
+                <button class="btn btn-info btn-lg" type="button">
+                    <i class="fa-fw fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div id="menu-accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+            <div class="card-header" role="tab" id="menu-heading1">
+                <a data-parent="#menu-accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-home"></i> Home</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="menu-heading2">
+                <a data-parent="#menu-accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-home"></i> Album</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="menu-heading3">
+                <a data-parent="#menu-accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-home"></i> Blog</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="menu-heading4">
+                <a data-parent="#menu-accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-home"></i> About</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="menu-heading5">
+                <a data-parent="#menu-accordion" href="/signout" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-sign-out"></i> Sign-out</a>
+            </div>
+        </div>
+    </div>
+</div>

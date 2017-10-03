@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'user/registrations' }
   root "users#show"
 
+  resources :blogs, only: [:new, :create]
   resources :users, only: [ :show, :editpassword ] do
+    resources :blogs, only: [:show, :index]
     collection do
       get 'editpassword'
       put 'updatepassword'

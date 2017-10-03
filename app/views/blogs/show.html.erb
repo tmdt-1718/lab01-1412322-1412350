@@ -1,0 +1,17 @@
+<h1 class="text-center">
+  <%=@blog.tittle%>
+</h1>
+<%= image_tag @blog.imgcover %>
+  <p>
+    <%= @blog.content%>
+  </p>
+  <ul>
+    <li>By
+      <a>
+        <%= @blog.user.name%>
+      </a>
+    </li>
+    <li>/Views:
+      <%= @blog.view%>
+    </li>
+  </ul>

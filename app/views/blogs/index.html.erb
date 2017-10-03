@@ -1,4 +1,6 @@
 <div class="row">
-  <%= render @blogs %>
+  <div class="col-sm-12">
+    <%= render @blogs %>
+  </div>
 </div>
 <%= link_to 'Add new post', new_blog_path, class: "btn btn-primary" %>

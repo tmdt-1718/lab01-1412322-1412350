@@ -4,6 +4,8 @@ class BlogsController < ApplicationController
   end
   def show
     @blog = Blog.find(params[:id])
+    @blog.view += 1
+    @blog.save 
   end
   def new
     @blog = Blog.new

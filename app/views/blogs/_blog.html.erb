@@ -13,7 +13,7 @@
     <p><%= content_summerize(blog.content)%></p>
     <ul>
       <li>By <a ><%= blog.user.name%></a></li>
-      <li>/Views: <%= blog.view%></li>
+      <li>Views: <%= blog.view%></li>
     </ul>
   </div>
   <%= link_to user_blog_path(blog.user, blog) do %>

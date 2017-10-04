@@ -4,10 +4,11 @@
 <head>
 	<title>Lab0114123221412350</title>
 	<%= csrf_meta_tags %>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+		    crossorigin="anonymous">
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+			<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
@@ -72,21 +73,24 @@
 	</div>
 
 	<div id="main">
+		<header>
+		<%= render 'commons/header' %>
 		<%= render 'commons/navbar' %>
-			<content>
-				<div class="container animated wow fadeInDown">
-					<div class="row">
-						<div class="col-md-3">
-							<%= render 'commons/leftmenu' %>.
-						</div>
-						<div class="col-md-9">
-							<%= yield %>
-						</div>
+		</header>
+		<content>
+			<div class="container animated wow fadeInDown">
+				<div class="row">
+					<div class="col-md-3">
+						<%= render 'commons/leftmenu' %>.
+					</div>
+					<div class="col-md-9">
+						<%= yield %>
 					</div>
 				</div>
-			</content>
+			</div>
+		</content>
 
-			<%= render 'commons/footer' %>
+		<%= render 'commons/footer' %>
 	</div>
 </body>
 

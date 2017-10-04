@@ -1,4 +1,5 @@
 <% if current_user %>
+  <nav class="navbar navbar-toggleable-sm navbar-light bg-faded main-nav" data-toggle="sticky-onscroll">
 
   <header>
     <div class="top-header d-flex align-items-end justify-content-between">
@@ -41,9 +42,9 @@
                 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <% end %>

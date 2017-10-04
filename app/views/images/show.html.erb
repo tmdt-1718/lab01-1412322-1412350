@@ -1,0 +1,12 @@
+<%= image_tag @image.url %>
+  <ul>
+    <li>By
+      <a>
+        <%= @image.user.name%>
+      </a>
+    </li>
+    <li>/Views:
+      <%= @image.view%>
+    </li>
+  </ul>
+<%= link_to 'Back', user_images_path, class: "btn btn-primary" %>

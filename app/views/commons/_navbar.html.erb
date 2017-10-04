@@ -18,22 +18,23 @@
             <a class="nav-link title" href="#"><i class="fa-fw fa fa-home"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link title animated wow fadeIn" href="#"><i class="fa-fw fa fa-film"></i> Album</a>
+            <%= link_to albums_path, class: "nav-link title animated wow fadeIn" do %>
+              <i class="fa-fw fa fa-film"></i> Album
+              <% end %>
           </li>
           <li class="nav-item">
             <%= link_to user_blogs_path(current_user.id), class: "nav-link title animated wow fadeIn" do %>
               <i class="fa-fw fa fa-file-text-o"></i> Blog
-            <% end %>
+              <% end %>
           </li>
           <li class="nav-item">
             <%= link_to about_path, class: "nav-link title animated wow fadeIn" do %>
-             <i class="fa-fw fa fa-users"></i> About
-            <% end %>
+              <i class="fa-fw fa fa-users"></i> About
+              <% end %>
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <a class="nav-link dropdown-toggle title" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false"><i class="fa-fw fa fa-user-o"></i> My Account</a>
+              <a class="nav-link dropdown-toggle title" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-fw fa fa-user-o"></i> My Account</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Notification</a>
                 <a class="dropdown-item" href="/userdetail/{{user._id}}">Profile</a>

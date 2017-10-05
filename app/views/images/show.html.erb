@@ -1,13 +1,21 @@
+<div class="row">
+<div class="col-sm-6">
 <%= image_tag @image.url, class: "img-fluid" %>
+</div>
+<div class="col-sm-6">
+  <h3> Image detail </h3> </br>
   <ul>
     <li>By
       <a>
         <%= @image.user.name%>
       </a>
     </li>
-    <li>/Views:
+    <li>Views:
       <%= @image.view%>
     </li>
   </ul>
+</div>
+</div>
+</br>
 <%= link_to 'Delete this image', image_path, class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
 <%= link_to 'Back', user_album_path(current_user, @image.album), class: "btn btn-primary" %>

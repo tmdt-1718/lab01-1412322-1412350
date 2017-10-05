@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.where(user_id: params[:user_id])
+    @blogs = Blog.all
   end
   def show
     @blog = Blog.find(params[:id])
@@ -17,5 +17,10 @@ class BlogsController < ApplicationController
     else
       redirect_to new_blog_url, alert: @blog.errors.full_messages[0]
     end
+  end
+  def destroy  
+    @blog = Blog.find(params[:id])
+    @blog.destroy
+    redirect_to blogs_url
   end
 end

@@ -10,4 +10,4 @@
     </li>
   </ul>
 <%= link_to 'Delete this image', image_path, class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to 'Back', user_album_images_path, class: "btn btn-primary" %>
+<%= link_to 'Back', user_album_path(current_user, @image.album), class: "btn btn-primary" %>

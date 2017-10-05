@@ -25,4 +25,9 @@ class AlbumsController < ApplicationController
       redirect_to new_user_album_url(user: current_user), alert: @album.errors.full_messages[0]
     end     
   end
+  def destroy  
+    @album = Album.find(params[:id])
+    @album.destroy
+    redirect_to albums_url
+  end
 end

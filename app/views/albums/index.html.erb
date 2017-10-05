@@ -3,4 +3,4 @@
     <%= render @albums %>
   </div>
 </div>
-<%= link_to 'Add new album', new_album_path, class: "btn btn-primary" %>
+<%= link_to 'Add new album', new_user_album_path(current_user), class: "btn btn-primary" %>

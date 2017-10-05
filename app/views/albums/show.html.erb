@@ -3,4 +3,4 @@
     <%= render @images %>
   </div>
 </div>
-<%= link_to 'Add new image', new_album_image_path(@album), class: "btn btn-primary" %>
+<%= link_to 'Add new image', new_user_album_image_path(current_user, @album), class: "btn btn-primary" %>

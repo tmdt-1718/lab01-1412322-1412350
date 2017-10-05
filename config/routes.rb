@@ -3,15 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => 'user/registrations' }
   root "users#show"
-
+  resources :albums, only: [:index]  
   resources :blogs, only: [:new, :create]
-  resources :albums do
-    resources :images, only: [:new, :create]
-  end
   resources :users, only: [ :show, :editpassword ] do
     resources :blogs, only: [:show, :index]
-    resources :albums, only: [:index, :show]  do
-      resources :images, only: [:show, :index]      
+    resources :albums, only: [:index, :show, :new, :create]  do
+      resources :images, only: [:show, :index, :new, :create]      
     end
     collection do
       get 'editpassword'

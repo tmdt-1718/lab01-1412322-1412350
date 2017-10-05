@@ -6,6 +6,8 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @image.view += 1
     @image.save 
+    @image.album.totalview += 1
+    @image.album.save
   end
   def new
     @image = Image.new
@@ -15,7 +17,7 @@ class ImagesController < ApplicationController
     if @image.save
       redirect_to user_album_url(current_user, params[:album_id]), notice: "Add successfully!"
     else
-      redirect_to new_album_image_url, alert: @image.errors.full_messages[0]
+      redirect_to new_user_album_image_url, alert: @image.errors.full_messages[0]
     end
   end
 end

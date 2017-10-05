@@ -4,20 +4,20 @@
 <head>
 	<title>Lab0114123221412350</title>
 	<%= csrf_meta_tags %>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-		    crossorigin="anonymous">
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-			<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+		crossorigin="anonymous">
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
 	<div class="overlay"></div>
-	<button class="navbar-toggler navbar-toggler-right hamburger is-closed" type="button" data-toggle="collapse" data-target="#sidenavbarContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" onclick="tooglebuttonClick()">
-		<span class="hamb-top"></span>
-		<span class="hamb-middle"></span>
-		<span class="hamb-bottom"></span>
-	</button>
+										<button class="navbar-toggler navbar-toggler-right hamburger is-closed" type="button" data-toggle="collapse" data-target="#sidenavbarContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" onclick="tooglebuttonClick()">
+							<span class="hamb-top"></span>
+							<span class="hamb-middle"></span>
+							<span class="hamb-bottom"></span>
+						</button>
 	<div id="side-navbar">
 		<!-- Side Navbar -->
 		<div class="top-side-navbar-panel logo d-flex justify-content-center align-items-center">
@@ -77,13 +77,59 @@
 		<%= render 'commons/navbar' %>
 		</header>
 		<content>
+			<div class="cover animated wow fadeInDown">
+				<div class="container">
+					<div id="carouselAds" class="carousel slide">
+						<!-- Slide -->
+						<ol class="carousel-indicators">
+							<li data-target="#carouselAds" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselAds" data-slide-to="1"></li>
+							<li data-target="#carouselAds" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner" role="Ads Slide">
+							<div class="carousel-item active">
+								<div class="img">
+									<%= image_tag asset_url("slide1.jpg"), class:"img-fluid" %>
+								<div class="carousel-caption">
+									<h5>"I am Diana of Themyscira, daughter of Hippolyta..."</h5>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="img">
+									<%= image_tag asset_url("slide2.jpg"), class:"img-fluid" %>
+								</div>
+								<div class="carousel-caption">
+									<h5>"...Queen of the Amazons..."</h5>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="img">
+									<%= image_tag asset_url("slide3.jpg"), class:"img-fluid" %>
+								</div>
+								<div class="carousel-caption">
+									<h5>"...in the name of all that it is good..."</h5>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselAds" role="button" data-slide="prev">
+							<i class="fa-fw fa fa-angle-left"></i>
+						</a>
+						<a class="carousel-control-next" href="#carouselAds" role="button" data-slide="next">
+							<i class="fa-fw fa fa-angle-right"></i>
+						</a>
+					</div>
+					<!-- End Slide -->
+				</div>
+			</div>
 			<div class="container animated wow fadeInDown">
 				<div class="row">
 					<div class="col-md-3">
-						<%= render 'commons/leftmenu' %>.
+						<%= render 'commons/leftmenu' %>
 					</div>
 					<div class="col-md-9">
-						<%= yield %>
+						<div class="menu-content">
+							<%= yield %>
+						</div>
 					</div>
 				</div>
 			</div>

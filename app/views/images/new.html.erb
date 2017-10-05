@@ -1,0 +1,7 @@
+<h1> Add new image </h1>
+<%= form_for @image, url: album_images_path(request.params[:album_id]) do |f| %>
+    <%= f.file_field :url %>
+    <%= f.submit "Add" %>
+    <p id="notice"><%= notice%></p>
+    <p id="alert"><%= alert%></p>           
+<% end %>

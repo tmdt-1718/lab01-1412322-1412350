@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   root "users#show"
 
   resources :blogs, only: [:new, :create]
-  resources :albums 
+  resources :albums do
+    resources :images, only: [:new, :create]
+  end
   resources :users, only: [ :show, :editpassword ] do
     resources :blogs, only: [:show, :index]
-    resources :images, only: [:show, :index]  
-    resources :albums, only: [:index, :show]  
+    resources :albums, only: [:index, :show]  do
+      resources :images, only: [:show, :index]      
+    end
     collection do
       get 'editpassword'
       put 'updatepassword'

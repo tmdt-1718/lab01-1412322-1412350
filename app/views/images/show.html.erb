@@ -1,4 +1,4 @@
-<%= image_tag @image.url %>
+<%= image_tag @image.url, class: "img-fluid" %>
   <ul>
     <li>By
       <a>
@@ -9,4 +9,4 @@
       <%= @image.view%>
     </li>
   </ul>
-<%= link_to 'Back', user_images_path, class: "btn btn-primary" %>
+<%= link_to 'Back', user_album_images_path, class: "btn btn-primary" %>

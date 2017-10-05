@@ -9,4 +9,5 @@
       <%= @image.view%>
     </li>
   </ul>
+<%= link_to 'Delete this image', image_path, class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
 <%= link_to 'Back', user_album_images_path, class: "btn btn-primary" %>

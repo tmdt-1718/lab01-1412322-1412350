@@ -20,4 +20,12 @@ class ImagesController < ApplicationController
       redirect_to new_user_album_image_url, alert: @image.errors.full_messages[0]
     end
   end
+  def destroy  
+    @image = Image.find(params[:id])
+    @album = @image.album
+    @album.totalview -= @image.view
+    @album.save
+    @image.destroy
+    redirect_to user_album_url(current_user, @album)
+  end
 end

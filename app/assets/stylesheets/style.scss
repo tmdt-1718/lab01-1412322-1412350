@@ -788,11 +788,12 @@
   
   .navbar-toggler .navbar-toggler-right {display: none !important}
   #carouselAds {
-    // .carousel-inner .carousel-item {
-    //   img {
-    //     width: 100%;
-    //   }
-    // }
+    .carousel-inner .carousel-item {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
     .carousel-control-prev, .carousel-control-next {
       font-size: 50px;
     }

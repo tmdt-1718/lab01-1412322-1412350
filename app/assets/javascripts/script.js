@@ -1,18 +1,3 @@
-//show google map
-function myMap() {
-	var mapOptions = {
-		center: new google.maps.LatLng(10.762636, 106.682030),
-		zoom: 16,       
-	}
-	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-	var marker = new google.maps.Marker({
-		position: map.getCenter(),
-		animation:google.maps.Animation.BOUNCE,
-		icon: '/images/map-marker.png',
-		map: map
-	});
-}
-
 $(function () {
 	$("#file").change(function () {
 		console.log('1');

@@ -5,28 +5,28 @@
     -moz-box-sizing: border-box;
   }
   
-  @font-face {
-    font-family: Raleway-Light;
-    src: url(../fonts/Raleway-Light.ttf);
-  }
+  // @font-face {
+  //   font-family: Raleway-Light;
+  //   src: url(../fonts/Raleway-Light.ttf);
+  // }
   
   
-  @font-face {
-    font-family: Raleway-Medium;
-    src: url(../fonts/Raleway-Medium.ttf);
-  }
+  // @font-face {
+  //   font-family: Raleway-Medium;
+  //   src: url(../fonts/Raleway-Medium.ttf);
+  // }
   
   
-  @font-face {
-    font-family: Raleway-Regular;
-    src: url(../fonts/Raleway-Regular.ttf);
-  }
+  // @font-face {
+  //   font-family: Raleway-Regular;
+  //   src: url(../fonts/Raleway-Regular.ttf);
+  // }
   
   
-  @font-face {
-    font-family: Raleway-Bold;
-    src: url(../fonts/Raleway-Bold.ttf);
-  }
+  // @font-face {
+  //   font-family: Raleway-Bold;
+  //   src: url(../fonts/Raleway-Bold.ttf);
+  // }
   
   
   body {
@@ -62,6 +62,7 @@
   }
   
   #side-categories-menu {
+    margin-top: 20px;
     height: 100%;
     border-right: 1px solid #EDEFF0;
     font-family: Raleway-Medium, sans-serif;
@@ -88,7 +89,7 @@
     /* 100% Full-height */
     position: fixed;
     /* Stay in place */
-    z-index: 1000;
+    z-index: 998;
     /* Stay on top */
     top: 0;
     left: 0;
@@ -321,13 +322,12 @@
   }
   
   .hamburger {
-    top: 20px;
     z-index: 999;
     left: 0;
+    margin: 20px 20px;
     display: block;
     width: 32px;
     height: 32px;
-    margin-left: 15px;
     background: transparent;
     border: none;
     &:hover, &:focus, &:active {
@@ -720,15 +720,30 @@
     color: #DE2825;
   }
   
-  #map {
-    width: 300px;
-    height: 150px;
-    border-radius: 3px;
+  .team-name {
+    text-align: center;
+    padding: 5px 0;
+    color: #FFF;
+    background-color: #1EB771;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .team-information {
+    width: 100%;
+    background-color: #1EB771;
+    border-radius: 0 0 10px 10px;
+    color: #FFFFFF;
     overflow: hidden;
-    -webkit-transform: translateZ(0);
+    text-align: center;
+  }
+
+  .team-contact {
+    margin: 20px 0;
+  }
+
+  #map {
+    height: 200px;
     -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
-    margin-top: 10px;
-    margin-bottom: 30px;
   }
   
   .btn-backtotop {
@@ -1509,7 +1524,7 @@
   }
   
   .menu-content {
-    margin: 0 20px 20px 20px;
+    margin: 20px;
     a {
       text-decoration: none;
       color: #1EB771;
@@ -1609,10 +1624,8 @@
 ///////////////////////////////////
 
 .about {
-  margin-top: 50px;
   cursor: pointer;
   .memberinfo {
-    border-radius: 10px;
     background-color: #fff;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);

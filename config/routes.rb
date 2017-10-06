@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   root "users#show"
   resources :images, only: [:destroy]
   resources :albums, only: [:index, :destroy]  
-  resources :blogs, only: [:new, :create, :destroy, :index]
+  resources :blogs, only: [:new, :create, :destroy, :index, :edit, :update]
   resources :users, only: [ :show, :editpassword ] do
-    resources :blogs, only: [:show, :index]
+    resources :blogs, only: [:show, :index, :edit, :update]
     resources :albums, only: [:index, :show, :new, :create]  do
       resources :images, only: [:show, :index, :new, :create]      
     end

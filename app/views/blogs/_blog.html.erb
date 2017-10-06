@@ -16,8 +16,11 @@
       <li>Views: <%= blog.view%></li>
     </ul>
   </div>
-  <%= link_to "Details", user_blog_path(blog.user, blog) do %>
-  <i class="fa fa-search-plus"></i>
+  <%= link_to user_blog_path(blog.user, blog) do %>
+    <i class="fa fa-search-plus"> Details</i>
+  <% end %>
+  <%= link_to edit_user_blog_path(blog.user, blog) do %>
+    <i class="fa fa-pencil-square-o">Edit</i>
   <% end %>
 </div>
 </div>

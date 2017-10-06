@@ -2,15 +2,14 @@ Rails.application.routes.draw do
   get '/about', to: "static#about"
   get '/error', to: "static#error"
 
-  devise_for :users, :controllers => { :registrations => 'user/registrations' }
+  devise_for :users, :controllers => { :registrations => 'user/registrations', :sessions  => 'user/sessions'}
   root "users#show"
-  resources :images, only: [:destroy]
-  resources :albums, only: [:index, :destroy]  
-  resources :blogs, only: [:new, :create, :destroy, :index, :edit, :update]
+  resources :albums, only: [:index]  
+  resources :blogs, only: [:new, :create, :index, :edit, :update]
   resources :users, only: [ :show, :editpassword ] do
-    resources :blogs, only: [:show, :index, :edit, :update]
-    resources :albums, only: [:index, :show, :new, :create]  do
-      resources :images, only: [:show, :index, :new, :create]      
+    resources :blogs, only: [:show, :index, :edit, :update, :destroy]
+    resources :albums, only: [:index, :show, :new, :create, :destroy]  do
+      resources :images, only: [:show, :index, :new, :create, :destroy]      
     end
     collection do
       get 'editpassword'

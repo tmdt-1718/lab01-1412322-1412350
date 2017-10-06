@@ -49,7 +49,8 @@ class BlogsController < ApplicationController
   private
   def has_permission_to_do_action
     user = params[:user_id]
-    if user != current_user.id
+    @user = User.find(user)
+    if @user != current_user
       redirect_to error_url, alert: "You don't have permisstion to do this action!"
     end
   end

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'user/registrations', :sessions  => 'user/sessions'}
   root "users#show"
   resources :albums, only: [:index]  
-  resources :blogs, only: [:new, :create, :index, :edit, :update]
+  resources :blogs, only: [:new, :create, :index, :edit, :update] do
+    resources :comments, only: [:create]
+  end
   resources :users, only: [ :show, :editpassword ] do
     resources :blogs, only: [:show, :index, :edit, :update, :destroy]
     resources :albums, only: [:index, :show, :new, :create, :destroy]  do

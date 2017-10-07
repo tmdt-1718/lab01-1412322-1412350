@@ -1,26 +1,108 @@
-<h2>Log in</h2>
-<%= alert %>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "middleform"}) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <fieldset>
+    <h1>Sign-in</h1>
+    <h2>Member Login</h2>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa-fw fa fa-user"></i></span>
+      <%= f.email_field :email, autofocus: true, class: "form-control", type: "email", placeholder: "Email", value: "ngoc120742@gmail.com"%>
     </div>
-  <% end -%>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa-fw fa fa-lock"></i></span>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", type: "password", placeholder: "Password", value: "1234567" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+      </div>
+      <% end -%>
+        <% if alert %>
+          <div class="alert alert-danger">
+            <%= alert %>
+          </div>
+          <% end %>
+            <div class="actions">
+              <%= f.submit "Log in", class: "btn btn-primary btn-round" %>
+            </div>
+            <%= render "devise/shared/links" %>
+  </fieldset>
 
-<%= render "devise/shared/links" %>
+  <% end %>
+
+    
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" href="#signin-tab" rel="tab1" role="tab" data-toggle="tab">Sign-in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#signup-tab" rel="tab2" role="tab" data-toggle="tab">Sign-up</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active animated wow fadeInDown" id="signin-tab">
+
+        </div>
+        <div role="tabpanel" class="tab-pane animated wow fadeInDown" id="signup-tab">
+          <form action="/signup" method="post" class="middleform">
+
+            <fieldset>
+              <h1>Sign-up</h1>
+              <h2>Step 1</h2>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-envelope-o"></i></span>
+                <input class="form-control" type="email" id="signupemail" name="email" placeholder="Email" />
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-lock"></i></span>
+                <input class="form-control" type="password" id="signuppassword" name="password" placeholder="Password" />
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-lock"></i></span>
+                <input class="form-control" type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" />
+              </div>
+              <div class="alert alert-danger collapse">
+
+              </div>
+              <input type="button" name="next" class="next btn btn-primary btn-round" value="Next" />
+              <a id="change-to-signin-tab-link" href="#">Already have an account? Sign-in now</a>
+              <a id="continue-as-guest-link" href="#">Continue as Guest</a>
+            </fieldset>
+            <fieldset>
+              <h1>Personal Details</h1>
+              <h2>Step 2</h2>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-drivers-license-o"></i></span>
+                <input class="form-control" type="text" id="name" name="name" placeholder="Full Name" />
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-address-book"></i></span>
+                <input class="form-control" type="text" id="address" name="address" placeholder="Address" />
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-phone"></i></span>
+                <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="text" id="phone" name="phone"
+                  placeholder="Phone" />
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-file-image-o"></i></span>
+                <input class="form-control" type="text" id="avatar" name="avatar" placeholder="Avatar" />
+              </div>
+              <div class="alert alert-danger collapse">
+
+              </div>
+              <div class="alert alert-success collapse">
+
+              </div>
+              <input id="previous-button" type="button" name="previous" class="previous btn btn-primary btn-round" value="Previous" />
+              <input id="signup-button" type="submit" class="btn btn-primary btn-round" value="Sign-up" />
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+      </div>

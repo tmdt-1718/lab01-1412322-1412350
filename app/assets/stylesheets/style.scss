@@ -879,35 +879,110 @@
     }
   }
   
-  
-  .product {
-    margin-top: 20px;
-    position: relative;
-  }
-  
-  .product-name {
-    margin-bottom: 10px;
-    font-family: Raleway-Medium, sans-serif;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  
-  .product-quantity {
-    margin-bottom: 10px;
-    font-family: Raleway-Medium, sans-serif;
-  }
-  
-  .product-kind, .product-description, .product-brand {
-    margin-top: -10px;
-    font-family: Raleway-Light, sans-serif;
-    color: #7B8B8E;
-  }
-  
   .product-block {
     border-radius: 3px;
     background-color: #FFF;
-    margin: 10px;
+    .product {
+      margin-top: 10px;
+      position: relative;
+      padding: 10px;
+      
+      .product-name {
+        margin-bottom: 10px;
+        font-family: Raleway-Medium, sans-serif;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      
+      .product-quantity {
+        margin-bottom: 10px;
+        font-family: Raleway-Medium, sans-serif;
+      }
+      
+      .product-kind, .product-description, .product-brand {
+        margin-top: -10px;
+        font-family: Raleway-Light, sans-serif;
+        color: #7B8B8E;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .product-image {
+        img {
+          border-radius: 3px;
+          border: 1px solid #EDEFF0;
+          opacity: 1;
+          display: block;
+          width: 150px;
+          height: 150px;
+          transition: .5s ease;
+          backface-visibility: hidden;
+        }
+      }
+
+      .middle {
+        cursor: pointer;
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        .button {
+          font-family: Raleway-Medium, sans-serif;
+          border-radius: 3px;
+          background-color: #1EB771;
+          border: none;
+          color: #FFF;
+          text-align: center;
+          padding: 10px;
+          width: 100px;
+          transition: all 0.5s;
+          cursor: pointer;
+          &:hover, &:focus, &:active {
+            background-color: #38D67B;
+            border: none;
+          }
+          a {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+            text-decoration: none;
+            color: #FFF;
+            &:after {
+              content: '\00bb';
+              position: absolute;
+              opacity: 0;
+              top: 0;
+              right: -20px;
+              transition: 0.5s;
+            }
+          }
+          &:hover a {
+            padding-right: 25px;
+            &:after {
+              opacity: 1;
+              right: 0;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .product-image {
+          img {
+            opacity: 0.3;
+          }
+        }
+        .middle {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   .product-description {
@@ -919,26 +994,22 @@
   }
   
   .product-price {
+    border-top: 1px solid #EDEFF0;
     font-family: Raleway-Medium, sans-serif;
     font-size: 20px;
-    margin-top: 20px;
-  }
-  
-  .product-image {
-    img {
-    width: 15px;
-    height: 10px;
+    margin: 10px;
+    span {
+      font-size: 13px;
+      opacity: 0.5;
     }
   }
   
-  .product .product-image img {
-    opacity: 1;
-    display: block;
-    width: 200px;
-    height: 200px;
-    transition: .5s ease;
-    backface-visibility: hidden;
-  }
+  // .product-image {
+  //   img {
+  //     width: 30px;
+  //     height: 30px; 
+  //   }
+  // }
   
   .product-detail {
     margin-left: 20px;
@@ -949,65 +1020,6 @@
     }
     .btn-round {
       margin: 20px 10px 20px 0;
-    }
-  }
-  
-  .middle {
-    cursor: pointer;
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    .button {
-      font-family: Raleway-Medium, sans-serif;
-      border-radius: 3px;
-      background-color: #1EB771;
-      border: none;
-      color: #FFF;
-      text-align: center;
-      padding: 10px;
-      width: 100px;
-      transition: all 0.5s;
-      cursor: pointer;
-      &:hover, &:focus, &:active {
-        background-color: #38D67B;
-        border: none;
-      }
-      a {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-        text-decoration: none;
-        color: #FFF;
-        &:after {
-          content: '\00bb';
-          position: absolute;
-          opacity: 0;
-          top: 0;
-          right: -20px;
-          transition: 0.5s;
-        }
-      }
-      &:hover a {
-        padding-right: 25px;
-        &:after {
-          opacity: 1;
-          right: 0;
-        }
-      }
-    }
-  }
-  
-  .product:hover {
-    img {
-      opacity: 0.3;
-    }
-    .middle {
-      opacity: 1;
     }
   }
   

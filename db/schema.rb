@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004040445) do
+ActiveRecord::Schema.define(version: 20171007093654) do
 
   create_table "albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "totalview"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20171004040445) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_blogs_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_blogs_on_user_id"
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "blog_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_comments_on_blog_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -71,6 +81,8 @@ ActiveRecord::Schema.define(version: 20171004040445) do
 
   add_foreign_key "albums", "users"
   add_foreign_key "blogs", "users"
+  add_foreign_key "comments", "blogs"
+  add_foreign_key "comments", "users"
   add_foreign_key "images", "albums"
   add_foreign_key "images", "users"
 end

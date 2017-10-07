@@ -150,16 +150,8 @@ $(".previous").click(function(){
 	});
 });
 
-//Zome Images
-$("#zoom_img0").elevateZoom({ 
-	zoomWindowFadeIn: 500, 
-	zoomWindowFadeOut: 500, 
-	lensFadeIn: 500, 
-	lensFadeOut: 500 
-});
-
 //Check if Slider is changed	
-$(document).ready(function(){
+$(document).on('turbolinks:load',function(){
 	var radio = $('input[type=radio][name=slide_switch]');
 	radio.change(function(){
 		var i = radio.index(radio.filter(':checked'));
@@ -171,11 +163,6 @@ $(document).ready(function(){
 		});
 	});
 
-});
-
-$(document).ready(function() { 
-	$("#id0").click();
-	$(".basic-multiple").select2();
 });
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
@@ -227,7 +214,7 @@ $('.overlay').bind('click', function(e) {
 });
 
 //smooth scroll
-$(document).ready(function(){
+$(document).on('turbolinks:load',function(){
   // Add smooth scrolling to all links
   $("a[href^='#']:not(a[href^='#carouselAds'], a[href^='#carouselLogos'], a[href^='#collapse1'], a[href^='#collapse2'], a[href^='#menu-collapse1'], a[href^='#menu-collapse2, a[href^='#signin-tab', a[href^='#signup-tab])").on('click', function(event) {
 
@@ -253,7 +240,7 @@ $(document).ready(function(){
 });
 
 //scroll to top button
-$(document).ready(function(){
+$(document).on('turbolinks:load',function(){
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 20) {
 			$('.btn-backtotop').fadeIn();
@@ -285,7 +272,7 @@ $("html, .dropdown-subitem, #side-navbar, .table-responsive").niceScroll({
 });
 
 //navbar fixed top when scroll
-$(document).ready(function() {
+$(document).on('turbolinks:load',function() {
 	// Custom 
 	var stickyToggle = function(sticky, stickyWrapper, scrollElement) {
 		var stickyHeight = sticky.outerHeight();
@@ -347,7 +334,7 @@ $('#carouselLogos').on('slide.bs.carousel', function (e) {
 });
 
 //tooltip style on
-$(document).ready(function(){
+$(document).on('turbolinks:load',function(){
     //  Activate the Tooltips
     $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 });

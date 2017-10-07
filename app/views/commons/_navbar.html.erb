@@ -1,41 +1,46 @@
 <% if current_user %>
 
-	<nav class="navbar navbar-toggleable-sm navbar-light bg-faded main-nav" data-toggle="sticky-onscroll">
+  <nav class="navbar navbar-toggleable-sm navbar-light bg-faded main-nav" data-toggle="sticky-onscroll">
 
-      <a class="navbar-brand logo" href="#">Logo</a>
-      <div class="collapse navbar-collapse justify-content-end" id="">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link title" href="#"><i class="fa-fw fa fa-home"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <%= link_to albums_path, class: "nav-link title animated wow fadeIn" do %>
-              <i class="fa-fw fa fa-film"></i> Album
-              <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to blogs_path, class: "nav-link title animated wow fadeIn" do %>
-              <i class="fa-fw fa fa-file-text-o"></i> Blog
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand logo" href="#">Logo</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li id="home" class="nav-item">
+          <a class="nav-link title" href="#"><i class="fa-fw fa fa-home"></i> Home</a>
+        </li>
+        <li id="albums" class="nav-item">
+          <%= link_to albums_path, class: "nav-link title animated wow fadeIn" do %>
+            <i class="fa-fw fa fa-film"></i> Albums
             <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to about_path, class: "nav-link title animated wow fadeIn" do %>
-              <i class="fa-fw fa fa-users"></i> About
+        </li>
+        <li id="blogs" class="nav-item">
+          <%= link_to blogs_path, class: "nav-link title animated wow fadeIn" do %>
+            <i class="fa-fw fa fa-file-text-o"></i> Blogs
             <% end %>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <a class="nav-link dropdown-toggle title" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-fw fa fa-user-o"></i> My Account</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Notification</a>
-                <a class="dropdown-item" href="/userdetail/{{user._id}}">Profile</a>
-                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </div>
+        </li>
+        <li id="about" class="nav-item">
+          <%= link_to about_path, class: "nav-link title animated wow fadeIn" do %>
+            <i class="fa-fw fa fa-users"></i> About
+            <% end %>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle title" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><i class="fa-fw fa fa-user-o"></i> My Account</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Notification</a>
+              <a class="dropdown-item" href="/userdetail/{{user._id}}">Profile</a>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </div>
-        </li>
-      </ul>
+    </div>
+    </li>
+    </ul>
     </div>
   </nav>
 
-	<% end %>
+  <% end %>

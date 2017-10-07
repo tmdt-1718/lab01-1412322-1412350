@@ -127,8 +127,13 @@
   
   /* When you mouse over the navigation links, change their color */
   
-  #side-categories-menu a {
-    &:hover, &:focus, &:active {
+  #side-categories-menu {
+    a {
+      &:hover, &:focus {
+        color: #1EB771;
+      }
+    }
+    .active {
       color: #1EB771;
     }
   }
@@ -497,12 +502,21 @@
     width: 100px;
   }
   
-  .navbar .nav-item .nav-link {
-    font-size: 20px;
-    transition: 0.3s;
-    color: #FFF;
-    &:hover, &:focus, &:active {
-      color: #1EB771;
+  .navbar { 
+    .nav-item {
+      .nav-link {
+      font-size: 20px;
+      transition: 0.3s;
+      color: #FFF;
+        &:hover, &:focus {
+          color: #1EB771;
+        }
+      }
+    }
+    .active {
+      .nav-link {
+        color: #1EB771 !important;
+      }
     }
   }
   

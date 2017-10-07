@@ -1,0 +1,16 @@
+<h1>Hi,
+  <%= @blog.user.name %>
+</h1>
+
+<p>
+  Your Blog with tittle 
+  <%= @blog.tittle%> in thegearblog.herokuapp.com has new comment from 
+  <%= @user.name %>
+</p>
+
+<p>
+  To see details of <%= @user.name %>'s comment, just follow this link:
+  <%= link_to 'link', user_blog_url(@user, @blog) %>.
+</p>
+
+<p>Have a great day!</p>

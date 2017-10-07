@@ -3,4 +3,4 @@
 </div>
 </br>
 <%= link_to 'Add new image', new_user_album_image_path(current_user, @album), class: "btn btn-primary" %>
-<%= link_to 'Delete this album', album_path, class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to 'Delete this album', user_album_path(current_user, @album), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>

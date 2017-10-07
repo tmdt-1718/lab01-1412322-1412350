@@ -24,22 +24,30 @@
         </div>
         <div class="card">
             <div class="card-header" role="tab" id="menu-heading2">
-                <a data-parent="#menu-accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-film"></i> Album</a>
+            <%= link_to albums_path do %>
+                <i class="fa-fw fa fa-film"></i> Album
+            <% end %>
             </div>
         </div>
         <div class="card">
             <div class="card-header" role="tab" id="menu-heading3">
-                <a data-parent="#menu-accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-file-text-o"></i> Blog</a>
+            <%= link_to blogs_path do %>
+                <i class="fa-fw fa fa-file-text-o"></i> Blog
+            <% end %>
             </div>
         </div>
         <div class="card">
             <div class="card-header" role="tab" id="menu-heading4">
-                <a data-parent="#menu-accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-users"></i> About</a>
+            <%= link_to about_path do %>
+                <i class="fa-fw fa fa-users"></i> About
+            <% end %>
             </div>
         </div>
         <div class="card">
             <div class="card-header" role="tab" id="menu-heading5">
-                <a data-parent="#menu-accordion" href="/signout" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-sign-out"></i> Sign-out</a>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa-fw fa fa-sign-out"></i> Sign-out</a>
+            <% end %>
             </div>
         </div>
     </div>

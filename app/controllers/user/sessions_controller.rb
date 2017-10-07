@@ -1,6 +1,5 @@
 class User::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
-
+  after_action :welcome_email_send, only: [:create]
   # GET /resource/sign_in
   # def new
   #   super
@@ -22,4 +21,7 @@ class User::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  def welcome_email_send
+    ApplicationMailer.welcome_email(current_user).deliver
+  end
 end

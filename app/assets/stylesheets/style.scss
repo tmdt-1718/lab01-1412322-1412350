@@ -501,7 +501,7 @@
     font-size: 20px;
     transition: 0.3s;
     color: #FFF;
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
       color: #1EB771;
     }
   }
@@ -661,12 +661,16 @@
     background-color: #5CB85C;
   }
   
-  .nav .nav-item .nav-link {
-    font-family: Raleway-Medium, sans-serif;
-    font-size: 15px;
-    color: #000;
-    &:hover, &:focus {
-      color: #000;
+  .nav {
+    .nav-item {
+      .nav-link {
+        font-family: Raleway-Medium, sans-serif;
+        font-size: 15px;
+        color: #1EB771;
+        &:hover, &:focus{
+          color: #1EB771;
+        }
+      }
     }
   }
   

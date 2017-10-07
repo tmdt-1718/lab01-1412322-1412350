@@ -11,7 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
+<<<<<<< 4cefeb7d68938d64a9b1a99d709316616520724f
 //= require jquery3
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+=======
+//= require turbolinks
+//= require jquery3
+//= require_tree .
+//= require bootstrap
+>>>>>>> Fix jQuery bug

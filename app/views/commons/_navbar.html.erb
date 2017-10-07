@@ -1,15 +1,6 @@
 <% if current_user %>
 
-  <header>
-    <div class="top-header d-flex align-items-end justify-content-between">
-      <div class="animated wow fadeInDown">
-        <h1>thegearsblog</h1>
-        <h1 style="color:#1EB771;">.com</h1>
-      </div>
-      <a class="animated wow fadeInDown">THE WORLD'S LARGEST BLOG</a>
-    </div>
-
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-faded main-nav" data-toggle="sticky-onscroll">
+	<nav class="navbar navbar-toggleable-sm navbar-light bg-faded main-nav" data-toggle="sticky-onscroll">
 
       <a class="navbar-brand logo" href="#">Logo</a>
       <div class="collapse navbar-collapse justify-content-end" id="">
@@ -23,7 +14,7 @@
               <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to user_blogs_path(current_user.id), class: "nav-link title animated wow fadeIn" do %>
+            <%= link_to blogs_path, class: "nav-link title animated wow fadeIn" do %>
               <i class="fa-fw fa fa-file-text-o"></i> Blog
               <% end %>
           </li>
@@ -41,9 +32,10 @@
                 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+	<% end %>

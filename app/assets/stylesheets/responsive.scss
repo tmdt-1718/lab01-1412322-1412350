@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px) {
+    #side-categories-menu {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    #carouselAds {
+        .carousel-indicators {
+            top: 90%;
+        }
+        .carousel-inner .carousel-item {
+            .carousel-caption {
+                top: 30%;
+            }
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-toggler .navbar-toggler-right {
+        display: none;
+    }
+}

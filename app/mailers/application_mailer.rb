@@ -5,4 +5,9 @@ class ApplicationMailer < ActionMailer::Base
     @user = user
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
+  def comment_email(user, blog)
+    @user = user
+    @blog = blog
+    mail(to: @blog.user.email, subject: 'Your Blog has new comment!')
+  end
 end

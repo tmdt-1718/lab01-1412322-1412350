@@ -4,5 +4,5 @@ class Blog < ApplicationRecord
   validates :tittle, presence: true
   validates :content, presence: true
   validates :imgcover, presence: true
- 
+  has_many :comments, dependent: :destroy
 end

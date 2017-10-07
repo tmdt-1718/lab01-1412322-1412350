@@ -1,0 +1,16 @@
+<h1> Add new album </h1>
+<%= form_for @album, url: user_albums_path(current_user) do |f| %>
+  <div class="row">
+    <%= f.label :url, "Image cover: " %>
+    <%= f.fields_for(@image) do |i| %>
+      <%= i.file_field :url%>
+    <% end %>
+  </div>
+  <div class="row">
+    <%= f.label :name, "Album's Name: " %>
+    <%= f.text_field :name%>
+  </div>
+    <%= f.submit "Add" %>
+    <p id="notice"><%= notice%></p>
+    <p id="alert"><%= alert%></p>           
+<% end %>

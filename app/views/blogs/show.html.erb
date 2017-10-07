@@ -1,0 +1,20 @@
+<h1 class="text-center">
+  <%=@blog.tittle%>
+</h1>
+<%= image_tag @blog.imgcover %>
+  <p>
+  <%=simple_format h @blog.content %>
+  </p>
+  <ul>
+    <li>By
+      <a>
+        <%= @blog.user.name%>
+      </a>
+    </li>
+    <li>/Views:
+      <%= @blog.view%>
+    </li>
+  </ul>
+  </br>
+<%= link_to 'Delete this Blog', blog_path, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}  %>
+<%= link_to 'Back', blogs_path, class: "btn btn-primary" %>

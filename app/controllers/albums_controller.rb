@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :has_permission_to_do_action, only: [:new, :destroy, :create]
+  before_action :has_permission_to_do_action, only: [:destroy]
   def index
     @albums = Album.all
   end
@@ -33,8 +33,8 @@ class AlbumsController < ApplicationController
   end
   private
   def has_permission_to_do_action
-    user = params[:user_id]
-    if user != current_user.id
+    @album = Album.find(params[:id])
+    if @album.user != current_user
       redirect_to error_url, alert: "You don't have permisstion to do this action!"
     end
   end

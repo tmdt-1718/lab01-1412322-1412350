@@ -22,6 +22,6 @@ class User::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
   def welcome_email_send
-    ApplicationMailer.welcome_email(current_user).deliver
+    ApplicationMailer.welcome_email(current_user).deliver_later
   end
 end

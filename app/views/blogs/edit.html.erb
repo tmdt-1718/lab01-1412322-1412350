@@ -2,7 +2,7 @@
   Update Blog
 </h1>
 
-<%= form_for @blog, accept: 'image/jpeg, image/png, image/gif' do |f| %>
+<%= form_for @blog, url: user_blog_url(current_user, @blog),accept: 'image/jpeg, image/png, image/gif' do |f| %>
   <%= f.label :imgcover, "Cover of Blog:"%>
   </br>
   <%= f.file_field :imgcover, value: "choose"%>

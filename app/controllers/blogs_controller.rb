@@ -20,10 +20,8 @@ class BlogsController < ApplicationController
     end
   end
   def edit
-    @blog = Blog.find(params[:id])
   end
   def update
-    @blog = Blog.find(params[:id])
     tittle = params[:blog][:tittle]
     content = params[:blog][:content]
     imgcover = params[:blog][:imgcover]
@@ -42,15 +40,13 @@ class BlogsController < ApplicationController
     end
   end
   def destroy  
-    @blog = Blog.find(params[:id])
     @blog.destroy
     redirect_to blogs_url
   end
   private
   def has_permission_to_do_action
-    user = params[:user_id]
-    @user = User.find(user)
-    if @user != current_user
+    @blog = Blog.find(params[:id])
+    if @blog.user != current_user
       redirect_to error_url, alert: "You don't have permisstion to do this action!"
     end
   end

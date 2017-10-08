@@ -99,10 +99,6 @@ $("#change-to-signup-tab-link").click(function () {
 	$('a[rel="tab2"]').trigger("click");
 });
 
-$("#continue-as-guest-link").click(function () {
-	$('#flipFlop').modal('hide');
-});
-
 //Login Form
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate

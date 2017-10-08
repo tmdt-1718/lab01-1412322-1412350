@@ -36,7 +36,29 @@
     transition: background-color .5s;
     height: 100%;
   }
-  
+  .menu-content1 {
+    height: 470px;
+    padding: 10px;
+    border-right: 1px solid #EDEFF0;
+    font-family: Raleway-Medium, sans-serif;
+    background-color: #FFF;
+    border-radius: 3px;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    a {
+      text-decoration: none;
+      color: #1EB771;
+    }
+    
+  }
+  .menu-content1{
+    h1 {
+      font-family: Raleway-Regular, sans-serif;
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
   html {
     height: 100%;
   }

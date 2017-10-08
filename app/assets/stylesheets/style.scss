@@ -640,6 +640,21 @@
       border-color: #38D67B;
     }
   }
+
+  .btn-round-danger {
+    border: 1px solid #FF3945;
+    border-radius: 3px;
+    background-color: #FF3945;
+    color: #FFF;
+    cursor: pointer;
+    .fa {
+      color: #FFF;
+    }
+    &:hover, &:focus {
+      background-color: #FF606A;
+      border-color: #FF606A;
+    }
+  }
   
   .add-to-favorite .btn-round, .remove-product .btn-round, .add-to-cart .btn-round {
     margin-bottom: 20px;

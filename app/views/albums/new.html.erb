@@ -1,4 +1,17 @@
-<h1> Add new album </h1>
+<div class="content-header">
+    <div class="d-flex justify-content-end">
+        <div class="mr-auto p-2"><span id="leftmenutoogle" onclick="tooglebuttonClick()">Show Left-Menu</span></div>
+        <div class="p-2"><span><a style="color: #000;" href="/">Home</a></span></div>
+        <div class="p-2"><i class="fa-fw fa fa-arrow-circle-right"></i></div>
+        <div class="p-2"><%= link_to albums_path do %><span style="color: #000;">Albums</span><% end %></div>
+        <div class="p-2"><i class="fa-fw fa fa-arrow-circle-right"></i></div>
+        <div class="p-2"><span style="color: #1EB771;">Create New Album</span></div>
+        
+    </div>
+    <h1>CREATE NEW ALBUM</h1>
+</div>
+
+<div class="container">
 <%= form_for @album, url: user_albums_path(current_user) do |f| %>
   <div class="row">
     <%= f.label :url, "Image cover: " %>
@@ -9,8 +22,9 @@
   <div class="row">
     <%= f.label :name, "Album's Name: " %>
     <%= f.text_field :name%>
-  </div>
     <%= f.submit "Add" %>
+  </div>
     <p id="notice"><%= notice%></p>
     <p id="alert"><%= alert%></p>           
 <% end %>
+</div>

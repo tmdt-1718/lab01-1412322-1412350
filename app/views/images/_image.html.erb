@@ -1,9 +1,18 @@
-<div class="col-lg-3 col-md-4 col-sm-6">
-  <div class="card">
-    <div class="w3-agile-post-img">
-      <%= link_to user_album_image_path(image.user, image.album, image) do %>
-        <%= image_tag image.url.thumb, class: "img-fluid" %>
+<div class="col-md-4 text-center">
+  <div class="product-block">
+    <div class="product">
+      <div class="product-image">
+        <%= image_tag image.url.thumb, class: "img-fluid mx-auto d-block" %>
+      </div>
+      <div class="middle">
+
+        <%= link_to user_album_image_path(image.user, image.album, image) do %>
+          <button class="button">
+          See more
+        </button>
           <% end %>
+
+      </div>
     </div>
   </div>
 </div>

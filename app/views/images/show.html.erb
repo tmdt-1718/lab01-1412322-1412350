@@ -1,3 +1,19 @@
+<div class="content-header">
+    <div class="d-flex justify-content-end">
+        <div class="mr-auto p-2"><span id="leftmenutoogle" onclick="tooglebuttonClick()">Show Left-Menu</span></div>
+        <div class="p-2"><span><a style="color: #000;" href="/">Home</a></span></div>
+        <div class="p-2"><i class="fa-fw fa fa-arrow-circle-right"></i></div>
+        <div class="p-2"><%= link_to albums_path do %><span style="color: #000;">Albums</span><% end %></div>
+        <div class="p-2"><i class="fa-fw fa fa-arrow-circle-right"></i></div>
+        <div class="p-2"><%= link_to user_album_path(current_user, @image.album) do %><span style="color: #000;">Pictures</span><% end %></div>
+        <div class="p-2"><i class="fa-fw fa fa-arrow-circle-right"></i></div>
+        <div class="p-2"><span style="color: #1EB771;">Picture's Detail</span></div>
+        
+    </div>
+    <h1>PICTURE'S DETAIL</h1>
+</div>
+
+<div class="container">
 <div class="row">
 <div class="col-sm-6">
 <%= image_tag @image.url, class: "img-fluid" %>
@@ -17,5 +33,15 @@
 </div>
 </div>
 </br>
-<%= link_to 'Delete this image', user_album_image_path(current_user, @image.album, @image), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to 'Back', user_album_path(current_user, @image.album), class: "btn btn-primary" %>
+<%= link_to user_album_image_path(current_user, @image.album, @image), method: :delete, data: {confirm: "Are you sure?"} do %>
+<button class="btn btn-primary btn-round-danger">
+Delete Picture
+</button>
+<%end%>
+<%= link_to user_album_path(current_user, @image.album) do %>
+<button class="btn btn-primary btn-round">
+Back
+</button>
+<%end%>
+
+</div>

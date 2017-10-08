@@ -1,0 +1,49 @@
+<% if current_user %>
+    <div class="cover">
+        <div class="container">
+            <div id="carouselAds" class="carousel slide">
+                <!-- Slide -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselAds" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselAds" data-slide-to="1"></li>
+                    <li data-target="#carouselAds" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="Ads Slide">
+                    <div class="carousel-item active">
+                        <div class="img">
+                            <%= image_tag asset_url("slide1.jpg"), class:"img-fluid" %>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5>"I am Diana of Themyscira, daughter of Hippolyta..."</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="img">
+                            <%= image_tag asset_url("slide2.jpg"), class:"img-fluid" %>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5>"...Queen of the Amazons..."</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="img">
+                            <%= image_tag asset_url("slide3.jpg"), class:"img-fluid" %>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5>"...in the name of all that it is good..."</h5>
+                        </div>
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselAds" role="button" data-slide="prev">
+                        <i class="fa-fw fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselAds" role="button" data-slide="next">
+                        <i class="fa-fw fa fa-angle-right"></i>
+                    </a>
+                </div>
+                <!-- End Slide -->
+            </div>
+        </div>
+    </div>
+
+<% end %>

@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :has_permission_to_do_action, only: [:edit, :update, :destroy]
   def index
+    @comment = Comment.new
     @blogs = Blog.all
   end
   def show
@@ -28,13 +29,13 @@ class BlogsController < ApplicationController
     imgcover = params[:blog][:imgcover]
     if imgcover
       if @blog.update(tittle: tittle, content: content, imgcover: imgcover)
-        redirect_to user_blog_url(current_user, @blog), notice: "Updated blog!"
+        redirect_to user_blogs_url(current_user), notice: "Updated blog!"
       else
         redirect_to edit_user_blog_url(current_user, @blog), alert: @blog.errors.full_messages[0]
       end
     else
       if @blog.update(tittle: tittle, content: content)
-        redirect_to user_blog_url(current_user, @blog), notice: "Updated blog!"
+        redirect_to user_blogs_url(current_user), notice: "Updated blog!"
       else
         redirect_to edit_user_blog_url(current_user, @blog), alert: @blog.errors.full_messages[0]
       end

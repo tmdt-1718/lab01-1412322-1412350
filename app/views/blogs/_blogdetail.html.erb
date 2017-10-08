@@ -1,0 +1,57 @@
+<!-- The modal -->
+<div class="modal fade bd-example-modal-lg" id=<%= blog.id %> tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 class="modal-title" id="modalLabel"  >Blog's Detail</h1>
+      </div>
+      <div class="modal-body">
+
+<div class="row">
+  <div class="col-lg-4">
+    <%= image_tag blog.imgcover, class: "img-fluid" %>
+  </div>
+  <div class="blog-block col-lg-7">
+    <div class="blog-title">
+      <%= blog.tittle%>
+    </div>
+    <div class="row">
+
+      <div class="blog-name col-lg-8">
+        <span>By</span> <%= blog.user.name%>
+      </div>
+
+      <div class="blog-view col-lg-4">
+        <%= blog.view%> view(s)
+      </div>
+    </div>
+    <div class="blog-content">
+    <%= link_to user_blog_path(blog.user, blog), method: :Delete do%>
+    </div>
+    <button class="btn btn-primary btn-round-danger">
+    Delete Post
+    </button>
+    <%end%>
+    <hr>
+    <%=simple_format h blog.content %>
+  </div>
+</div>
+
+<%= render 'comments/new', blog: blog %>
+<h3> Comments list </h3>
+<div class="row">
+  <div class="col-sm-12">
+    <%= render blog.comments %>
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-round" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

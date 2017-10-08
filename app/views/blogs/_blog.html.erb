@@ -1,28 +1,33 @@
-<div class="card">
-<div class="row">
-<div class="col-md-3 col-sm-6 w3-agile-post-grids">
-  <div class="w3-agile-post-img">
-    <%= image_tag blog.imgcover.thumb, class: "img-fluid" %>
-  </div>
-</div>
-<div class="col-md-9 col-sm-6 w3-agile-post-grids">
-  <div class="w3-agile-post-info">
-    <h4>
+<div class="col-md-4 text-center">
+  <div class="product-block">
+    <div class="product">
+      <div class="product-image">
+        <%= image_tag blog.imgcover.thumb, class: "img-fluid mx-auto d-block" %>
+      </div>
+      <div class="middle">
+      
+        <button class="button" data-toggle="modal" data-target=#<%= blog.id%>>
+          View
+        </button>
+
+      </div>
+      <p class="product-name">
       <%= blog.tittle%>
-    </h4>
-    <p><%= content_summerize(blog.content)%></p>
-    <ul>
-      <li>By <a ><%= blog.user.name%></a></li>
-      <li>Views: <%= blog.view%></li>
-    </ul>
+      </p>
+      <p class="product-brand">
+        <%= content_summerize(blog.content)%>
+      </p>
+      <p class="product-price">
+        <span>by </span><%= blog.user.name%>
+      </p>
+    </div>
+        <%= render 'blogdetail', blog: blog %>
+    <div class="form-inline add-to-cart d-flex justify-content-center">
+      <%= link_to edit_user_blog_path(blog.user, blog) do %>
+        <button class="btn btn-primary btn-round">
+        <i class="fa-fw fa fa-shopping-cart"></i> Edit Blog
+        </button>
+      <% end %>
+    </div>
   </div>
-  <%= link_to user_blog_path(blog.user, blog) do %>
-    <i class="fa fa-search-plus"> Details</i>
-  <% end %>
-  <%= link_to edit_user_blog_path(blog.user, blog) do %>
-    <i class="fa fa-pencil-square-o">Edit</i>
-  <% end %>
 </div>
-</div>
-</div>
-<hr />

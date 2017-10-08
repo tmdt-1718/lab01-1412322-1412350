@@ -25,12 +25,11 @@
             </br>
             <%= f.text_area :content, class: "multiline"%>
               
-                <p id="notice">
-                  <%= notice%>
-                </p>
-                <p id="alert">
-                  <%= alert%>
-                </p>
+                    <% if alert %>
+          <div class="alert alert-danger">
+            <%= alert %>
+          </div>
+          <% end %> 
                 <%= f.submit "Upload", class: "btn btn-primary btn-round" %>
                 <% end %>
 </div>

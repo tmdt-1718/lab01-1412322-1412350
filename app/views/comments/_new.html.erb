@@ -5,10 +5,9 @@
 <%= f.text_field :content%>
   </br>
 <%= f.submit "Submit", class: "btn btn-primary" %>
-  <p id="notice">
-    <%= notice%>
-  </p>
-  <p id="alert">
-    <%= alert%>
-  </p>
+      <% if alert %>
+          <div class="alert alert-danger">
+            <%= alert %>
+          </div>
+          <% end %> 
   <% end %>

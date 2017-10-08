@@ -1,7 +1,11 @@
 <div class="content-header">
-	<div class="d-flex justify-content-end">
-		<span><a href="/">Home</a></span> <i class="fa-fw fa fa-arrow-circle-right"></i> <span>About</span>
-	</div>
+ <div class="d-flex justify-content-end">
+        <div class="mr-auto p-2"><span id="leftmenutoogle" onclick="tooglebuttonClick()">Show Left-Menu</span></div>
+        <div class="p-2"><span><a style="color: #000;" href="/">Home</a></span></div>
+        <div class="p-2"><i class="fa-fw fa fa-arrow-circle-right"></i></div>
+        <div class="p-2"><%= link_to about_path do %><span>About</span><% end %></div>
+        
+    </div>
 	<h1>About "THE GEARS"</h1>
 </div>
 <div class="team-name">

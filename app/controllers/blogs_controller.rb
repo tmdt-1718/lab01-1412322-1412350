@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :has_permission_to_do_action, only: [:edit, :update, :destroy]
   def index
+    @comment = Comment.new
     @blogs = Blog.all
   end
   def show

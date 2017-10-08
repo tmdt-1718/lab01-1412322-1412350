@@ -5,11 +5,11 @@
         <%= image_tag blog.imgcover.thumb, class: "img-fluid mx-auto d-block" %>
       </div>
       <div class="middle">
-        <%= link_to user_blog_path(blog.user, blog) do %>
-          <button class="button">
-            View
-          </button>
-        <% end %>
+
+        <button class="button" data-toggle="modal" data-target="#flipFlop">
+          View
+        </button>
+
       </div>
       <p class="product-name">
       <%= blog.tittle%>
@@ -31,3 +31,4 @@
     </div>
   </div>
 </div>
+<%= render 'blogdetail', blog: blog %>

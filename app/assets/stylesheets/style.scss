@@ -815,7 +815,9 @@
   }
   
   .cover .container {
-    padding: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
     position: relative;
     overflow: hidden;
   }
@@ -826,6 +828,7 @@
       img {
         width: 100%;
         height: auto;
+        border-radius: 3px;
       }
     }
     .carousel-control-prev, .carousel-control-next {

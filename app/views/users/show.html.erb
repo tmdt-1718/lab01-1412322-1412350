@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-end">
+  <span><a href="/">Home</a> > User's Information > Profile</span>
+</div>
+<h1>Profile</h1>
+<form class="form-user">
+  Avatar
+  <div class="avatar">
+    <%= image_tag asset_url("defaultavatar.png"), class:"img-fluid"%>
+  </div>
+
+  <%= @user.email %>
+  </br>
+  <%= @user.name%>
+  </br>
+  <%= @user.dob%>
+
+  <%= link_to edit_user_registration_path(@user) do %>
+    <i class="fa-fw fa fa-pencil"></i>Change password
+          <% end %>
+</form>

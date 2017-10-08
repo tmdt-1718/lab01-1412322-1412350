@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :blogs, only: [:new, :create, :index, :edit, :update] do
     resources :comments, only: [:create]
   end
-  resources :users, only: [ :show, :editpassword ] do
+  resources :users, only: [ :show, :editpassword, :show] do
     resources :blogs, only: [:show, :index, :edit, :update, :destroy]
     resources :albums, only: [:index, :show, :new, :create, :destroy]  do
       resources :images, only: [:show, :index, :new, :create, :destroy]      

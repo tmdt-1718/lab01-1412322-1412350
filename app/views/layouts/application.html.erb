@@ -14,49 +14,46 @@
 <body>
 <% if current_user %>
 	<div class="overlay"></div>
-		<button class="navbar-toggler navbar-toggler-right hamburger is-closed" type="button" data-toggle="collapse" data-target="#sidenavbarContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" onclick="tooglebuttonClick()">
-			<span class="hamb-top"></span>
-			<span class="hamb-middle"></span>
-			<span class="hamb-bottom"></span>
-		</button>
 	<div id="side-navbar">
 		<!-- Side Navbar -->
-		<div class="top-side-navbar-panel logo d-flex justify-content-center align-items-center">
-			<%= image_tag asset_url("defaultavatar.png"), class:"img-circle img-no-padding img-responsive"%>
+		<div class="top-side-navbar-panel">
+			<span onclick="tooglebuttonClick()">Hide Left-Menu</span>
+			<div class="d-flex justify-content-center align-items-center">
+				<%= image_tag asset_url("defaultavatar.png"), class:"img-circle img-no-padding img-responsive"%>
+			</div>
 		</div>
 		<div id="accordion" role="tablist" aria-multiselectable="true">
 			<div class="card">
 				<div class="card-header" role="tab" id="heading3">
-					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-home"></i> Home</a>
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-home"></i> Home</a>
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-header" role="tab" id="heading4">
-					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-film"></i> Album</a>
+				<%= link_to albums_path do %>
+					<i class="fa-fw fa fa-film"></i> Album
+				<% end %>
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-header" role="tab" id="heading4">
-					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-file-text-o"></i> Blog</a>
+				<%= link_to blogs_path do %>
+					<i class="fa-fw fa fa-file-text-o"></i> Blog
+				<% end %>
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-header" role="tab" id="heading4">
-					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-users"></i> About</a>
+				<%= link_to about_path do %>
+					<i class="fa-fw fa fa-users"></i> About</a>
+				<% end %>
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="heading2">
-					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2"><i class="fa-fw fa fa-user-o"></i> My Account <i class="fa-fw fa fa-caret-down"></i></a>
-				</div>
-				<div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2">
-					<ul class="list-group">
-						<li class="list-group-item">Notification</li>
-						<li class="list-group-item">Profile</li>
-						<li class="list-group-item">
-							<a href="/signout">Sign-out</a>
-						</li>
-					</ul>
+				<div class="card-header" role="tab" id="heading4">
+				<%= link_to destroy_user_session_path, method: :delete do %>
+					<i class="fa-fw fa fa-users"></i> Sign-out</a>
+				<% end %>
 				</div>
 			</div>
 		</div>

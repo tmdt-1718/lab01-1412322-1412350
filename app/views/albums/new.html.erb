@@ -3,7 +3,7 @@
   <div class="row">
     <%= f.label :url, "Image cover: " %>
     <%= f.fields_for(@image) do |i| %>
-      <%= i.file_field :url%>
+      <%= i.file_field :url, required: true%>
     <% end %>
   </div>
   <div class="row">

@@ -22,9 +22,9 @@
   <div class="row">
     <%= f.label :name, "Album's Name: " %>
     <%= f.text_field :name%>
-    <%= f.submit "Add" %>
   </div>
     <p id="notice"><%= notice%></p>
-    <p id="alert"><%= alert%></p>           
+    <p id="alert"><%= alert%></p>
+    <%= f.submit "Add", class: "btn btn-primary btn-round" %>         
 <% end %>
 </div>

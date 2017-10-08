@@ -1,23 +1,27 @@
-<div class="col-md-4 col-sm-6">
-  <div class="card">
-      <%= image_tag album.imgcover, class: "img-fluid" %>
-    <div class="w3-agile-post-info">
-      <h4 class="text-center">
-        <%= album.name%>
-      </h4>
-      <ul>
-        <li>By
-          <a>
-            <%= album.user.name%>
-          </a>
-        </li>
-        <li>Views:
-          <%= album.totalview%>
-        </li>
-      </ul>
+<div class="col-md-4 text-center">
+  <div class="product-block">
+    <div class="product">
+      <div class="product-image">
+        <%= image_tag album.imgcover, class: "img-fluid" %>
+      </div>
+      <div class="middle">
+
+<%= link_to user_album_path(album.user, album) do %>
+        <button class="button">
+          See more
+        </button>
+        <% end %>
+
+      </div>
+      <p class="product-name">
+      <%= album.name%>
+      </p>
+      <p class="product-brand">
+        <%= album.totalview%> view(s)
+      </p>
+      <p class="product-price">
+        <span>by </span><%= album.user.name%>
+      </p>
     </div>
-    <%= link_to user_album_path(album.user, album) do %>
-      <i class="fa fa-search-plus"></i>
-      <% end %>
   </div>
 </div>

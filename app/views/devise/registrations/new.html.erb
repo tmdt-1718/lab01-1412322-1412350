@@ -1,3 +1,52 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "middleform"}) do |f| %>
+  <%= devise_error_messages! %>
+
+ <fieldset>
+              <h1>Sign-up</h1>
+              <h2>Step 1</h2>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-envelope-o"></i></span>
+                <%= f.email_field :email, autofocus: true, class: "form-control", type: "email", placeholder: "Email" %>
+                
+              </div>
+                            <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-drivers-license-o"></i></span>
+                    <%= f.text_field :name, class: "form-control", type: "text", placeholder: "Full Name"  %>
+                
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-lock"></i></span>
+                   
+                <% if @minimum_password_length %>
+                
+                
+                <%= f.password_field :password, autocomplete: "off", class: "form-control", type: "password", placeholder: "Password" %>
+                <div class="input-group">(<%= @minimum_password_length %> characters minimum)</div>
+<% end %>
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-lock"></i></span>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", type: "password", placeholder: "Confirm Password" %>
+
+              </div>
+
+                            <div class="input-group">
+                <span class="input-group-addon"><i class="fa-fw fa fa-address-book"></i></span>
+                    <%= f.text_field :dob, class: "form-control", type: "text", placeholder: "Day of Birth" %>
+              </div>
+              <div class="alert alert-danger collapse">
+
+              </div>
+                <div class="actions">
+    <%= f.submit "Sign up", class: "next btn btn-primary btn-round" %>
+  </div>
+              <input  />
+              <%= render "devise/shared/links" %>
+            </fieldset>
+            
+<% end %>
+
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

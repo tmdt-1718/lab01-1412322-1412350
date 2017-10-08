@@ -690,6 +690,33 @@
   .modal-body {
     height: 650px;
     background-color: #EDEFF0;
+    text-align: left;
+    overflow: hidden;
+    word-break: break-all;
+    img {
+      border-radius: 3px;
+      width: 350px;
+      height: auto;
+    }
+    .blog-block {
+      background-color: #FFF;
+      .blog-title {
+        font-size: 20px;
+      }
+      .blog-view {
+
+      }
+      .blog-name {
+
+        span {
+          font-size: 10px;
+          opacity: 0.5;
+        }
+      }
+      .blog-content {
+
+      }
+    }
   }
   
   .alert {

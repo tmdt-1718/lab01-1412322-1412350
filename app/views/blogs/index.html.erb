@@ -1,13 +1,16 @@
 <div class="content-header">
     <div class="d-flex justify-content-end">
-        <span><a href="/">Home</a></span> <i class="fa-fw fa fa-arrow-circle-right"></i> <span>Album</span>
+        <div class="mr-auto p-2"><span id="leftmenutoogle" onclick="tooglebuttonClick()">Show Left-Menu</span></div>
+        <div class="p-2"><span><a href="/">Home</a></span></div>
+        <div class="p-2"><i class="fa-fw fa fa-arrow-circle-right"></i></div>
+        <div class="p-2"><span>Blogs</span></div>
     </div>
     <h1>BLOGS</h1>
     <%= link_to new_blog_path do %>
-    <button class="btn btn-primary btn-round">
+        <button class="btn btn-primary btn-round">
      Create New Post
     </button>
-    <% end %>
+        <% end %>
 </div>
 
 <div class="row">

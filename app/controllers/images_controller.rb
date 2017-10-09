@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
   before_action :has_permission_to_do_action, only: [:new, :destroy, :create]
+  before_action :authenticate_user!
   def index
     @images = Image.all
   end
@@ -29,12 +30,16 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @album = @image.album
     @album.totalview -= @image.view
+    @album.save        
     if @image.album.images.count == 1
       @image.album.imgcover = "/assets/images/defaultimage.jpg"
+      @image.album.save
     end
-    @album.save    
     @image.destroy
-    
+    if @album.images.count == 1
+      @album.imgcover = @album.images.first.url
+      @album.save
+    end
     redirect_to user_album_url(current_user, @album)
   end
   private

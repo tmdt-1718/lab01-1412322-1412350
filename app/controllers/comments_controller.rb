@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    before_action :authenticate_user!
     def create
         @comment = Comment.new(content: params[:comment][:content], user: current_user, blog_id: params[:blog_id])
         if @comment.save 

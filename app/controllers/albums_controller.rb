@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :has_permission_to_do_action, only: [:destroy]
+  before_action :authenticate_user!
   def index
     @albums = Album.all
   end

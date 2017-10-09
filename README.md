@@ -44,6 +44,7 @@ Yêu cầu **không bắt buộc**:
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 * [X] Cắt ảnh thumbnail (1412350)
+* [X] Authenticate usernand Authorize user permission (1412350)
 
 ## Demo
 

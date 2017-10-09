@@ -6,7 +6,7 @@ Thành viên:
 * [X] 1412322 Luong Nhat Minh (1412322)
 * [X] 1412350 Nguyen Thi Bao Ngoc (1412350)
 
-URL: **URL hosting của bài tập**
+URL: https://thegearsblog.herokuapp.com
 
 ## Yêu cầu
 
@@ -20,10 +20,10 @@ Yêu cầu **bắt buộc**
 * [X] Navigation bar sẽ ẩn đi với kích thước màn hình nhỏ hơn 992px và có nút nhấn để hiển thị navigation bar. (1412322)
 * [X] Left menu sẽ ẩn đi khi kích thước màn hình nhỏ hơn 768px và có nút nhấn để hiển thị lại left menu. (1412322)
 * [X] Trang web được thiết kế sẽ bao gồm các trang: home, albums, about, blog. (1412322)
-* [X] Khi nhấn vào trang albums sẽ thấy danh sách các album đã được lưu trữ trong hệ thống. Mỗi album bao gồm: ảnh cover, tên người tạo, tổng số view của các tấm ảnh trong album. (1412322)
+* [X] Khi nhấn vào trang albums sẽ thấy danh sách các album đã được lưu trữ trong hệ thống. Mỗi album bao gồm: ảnh cover, tên người tạo, tổng số view của các tấm ảnh trong album. (1412322-UI layout/1412350-Action controller)
 * [X] Khi nhấn vào từng album sẽ sẽ chuyển sang danh sách các tấm ảnh trong album. Mỗi tấm ảnh hiển thị các thông tin: người đăng, số lượng view và tấm ảnh dưới dạng thumbnail. (1412350)
 * [X] Vào trang about sẽ thấy thông tin nhóm: tên nhóm, danh sách thành viên (mã sinh viên, họ tên, ảnh đại diện) và bản đồ google map hiển thị địa chỉ liên lạc của nhóm. (1412322)
-* [X] Vào trang blog sẽ thấy danh sách các bài viết, mỗi bài viết bao gồm: nội dung rút gọn, ảnh đại diện, người đăng và số view. (1412322)
+* [X] Vào trang blog sẽ thấy danh sách các bài viết, mỗi bài viết bao gồm: nội dung rút gọn, ảnh đại diện, người đăng và số view. (1412322-UI layout/1412350-Action controller)
 * [X] Nhấn vào mỗi bài viết sẽ thấy chi tiết bài viết cùng đầy đủ nội dung của bài viết. (1412350)
 * [X] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). (1412322)
 * [X] Cho phép người dùng đăng nhập, đăng xuất, đăng ký thông tin tài khoản. (1412350)
@@ -43,8 +43,7 @@ Yêu cầu **không bắt buộc**:
 * [X] Gửi mail cho tác giả khi có người dùng comment vào bài viết của họ. (1412350)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
-* [ ] Chức năng 1
-* [ ] Chức năng 2
+* [X] Cắt ảnh thumbnail (1412350)
 
 ## Demo
 

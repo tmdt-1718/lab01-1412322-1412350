@@ -1,7 +1,5 @@
 class StaticController < ApplicationController
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  before_action :authenticate_user!  
   def about
   end
 end

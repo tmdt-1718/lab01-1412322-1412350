@@ -50,7 +50,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 
 Link ảnh GIF demo ứng dụng:
 
-[Video Walkthrough](https://media.giphy.com/media/1iPwXLX2Doecw65O/giphy.gif)
+[Video Walkthrough](https://gifyu.com/image/M6Tb)
 
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 

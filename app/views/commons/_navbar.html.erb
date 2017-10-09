@@ -10,7 +10,9 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li id="home" class="nav-item">
-          <a class="nav-link title" href="#"><i class="fa-fw fa fa-home"></i> Home</a>
+           <%= link_to root_path, class: "nav-link title" do %>
+            <i class="fa-fw fa fa-home"></i> Home
+            <% end %>
         </li>
         <li id="albums" class="nav-item">
           <%= link_to albums_path, class: "nav-link title" do %>
@@ -33,7 +35,7 @@
               aria-expanded="false"><i class="fa-fw fa fa-user-o"></i> My Account</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#">Notification</a>
-              <a class="dropdown-item" href="/userdetail/{{user._id}}">Profile</a>
+              <%= link_to 'Profile', root_path, class: "dropdown-item" %>
               <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </div>

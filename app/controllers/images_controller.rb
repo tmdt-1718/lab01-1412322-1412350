@@ -16,6 +16,10 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(url: params[:image][:url], user: current_user, view: 0, album_id: params[:album_id])
     if @image.save
+      if @image.album.images.count == 1
+        @image.album.imgcover = @image.url
+        @image.album.save
+      end
       redirect_to user_album_url(current_user, params[:album_id]), notice: "Add successfully!"
     else
       redirect_to new_user_album_image_url, alert: @image.errors.full_messages[0]
@@ -25,8 +29,12 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @album = @image.album
     @album.totalview -= @image.view
-    @album.save
+    if @image.album.images.count == 1
+      @image.album.imgcover = "/assets/images/defaultimage.jpg"
+    end
+    @album.save    
     @image.destroy
+    
     redirect_to user_album_url(current_user, @album)
   end
   private

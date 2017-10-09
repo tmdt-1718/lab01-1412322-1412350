@@ -24,19 +24,19 @@
 		</div>
 		<div id="accordion" role="tablist" aria-multiselectable="true">
 			<div class="card">
-				<div class="card-header" role="tab" id="heading3">
-					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="/" aria-expanded="false" aria-controls=""><i class="fa-fw fa fa-home"></i> Home</a>
+				<div class="card-header" role="tab" id="heading1">
+					<a href="/"><i class="fa-fw fa fa-home"></i> Home</a>
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="heading4">
+				<div class="card-header" role="tab" id="heading2">
 				<%= link_to albums_path do %>
 					<i class="fa-fw fa fa-film"></i> Album
 				<% end %>
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="heading4">
+				<div class="card-header" role="tab" id="heading3">
 				<%= link_to blogs_path do %>
 					<i class="fa-fw fa fa-file-text-o"></i> Blog
 				<% end %>
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-header" role="tab" id="heading4">
+				<div class="card-header" role="tab" id="heading5">
 				<%= link_to destroy_user_session_path, method: :delete do %>
 					<i class="fa-fw fa fa-users"></i> Sign-out</a>
 				<% end %>

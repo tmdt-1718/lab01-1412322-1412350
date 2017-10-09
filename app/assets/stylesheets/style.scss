@@ -204,9 +204,16 @@
     }
   }
   
-  #side-navbar a {
-    &:hover, &:focus, &:active {
-      color: #1EB771;
+  #side-navbar {
+    a {
+      &:hover, &:focus, &:active {
+        color: #1EB771;
+      }
+    }
+    .active {
+      a {
+        color: #1EB771;
+      }
     }
   }
   

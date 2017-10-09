@@ -1,25 +1,34 @@
 $(document).on('turbolinks:load', function () {
 
-	if (window.location.pathname == '/home') {
+	if (window.location.pathname == '/') {
 		$(".nav-item .active").removeClass("active");
 		$("#home").addClass("active");
 		$(".card-header .active").removeClass("active");
 		$("#menu-heading1").addClass("active");
+
+		$("#heading1").addClass("active");
+
 	} else if (window.location.pathname == '/albums') {
 		$(".nav-item .active").removeClass("active");
 		$("#albums").addClass("active");
 		$(".card-header .active").removeClass("active");
 		$("#menu-heading2").addClass("active");
+
+		$("#heading2").addClass("active");
 	} else if (window.location.pathname == '/blogs') {
 		$(".nav-item .active").removeClass("active");
 		$("#blogs").addClass("active");
 		$(".card-header .active").removeClass("active");
 		$("#menu-heading3").addClass("active");
+
+		$("#heading3").addClass("active");
 	} else if (window.location.pathname == '/about') {
 		$(".nav-item .active").removeClass("active");
 		$("#about").addClass("active");
 		$(".card-header .active").removeClass("active");
 		$("#menu-heading4").addClass("active");
+
+		$("#heading4").addClass("active");
 	}
 });
 

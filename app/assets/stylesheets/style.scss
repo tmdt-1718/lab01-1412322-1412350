@@ -751,24 +751,32 @@
       width: 350px;
       height: auto;
     }
-    .blog-block {
-      background-color: #FFF;
-      .blog-title {
-        font-size: 20px;
-      }
-      .blog-view {
 
-      }
-      .blog-name {
+  }
+  .blog-block {
+    background-color: #FFF;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break all;
+    word-wrap: break-word;    
+    .blog-title {
+      font-size: 20px;
+    }
+    .blog-view {
 
-        span {
-          font-size: 10px;
-          opacity: 0.5;
-        }
-      }
-      .blog-content {
+    }
+    .blog-name {
 
+      span {
+        font-size: 10px;
+        opacity: 0.5;
       }
+    }
+    .blog-content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break all;
+      word-wrap: break-word;      
     }
   }
   

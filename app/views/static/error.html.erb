@@ -1,2 +1,7 @@
-<p id="alert"><%= alert%></p> 
-<%= link_to 'Back', url_for(:back), class: "btn btn-primary" %>
+<div class="alert alert-danger">
+  <%= alert %>
+    <br>
+    <p> Only the one who created can do this action! </p>
+    <%= link_to 'Back', url_for(:back), class: "btn btn-primary" %>
+</div>
+<% end %>

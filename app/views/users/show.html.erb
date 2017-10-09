@@ -1,21 +1,25 @@
 <div class="about row">
-	<div class="col-md-12">
-		<div class="memberinfo">
-			<%= image_tag asset_url("slide2.jpg"), class:"img-fluid"%>
-				<div class="avatar">
-					<%= image_tag asset_url("defaultavatar.png"), class:"img-fluid"%>
-				</div>
-				<h4 class="text-center">User profile</h4>
-				<p>Name: <%=@user.name%> <br>Email: <%=@user.email%><br> Day of Birth: <%=@user.dob%></p>
-				<div class="row">
-					<div class="col-md-12 wow bounceInLeft">
-						<ul class="socialbutton">
-							<li class="facebook"><a target="_blank" href="https://www.facebook.com/nhatminh1904"><span class="fa fa-facebook" aria-hidden="true" title="fb.com/nhatminh1904"></span></a></li>
-							<li class="google"><a href="mailto:nhatminh190496@gmail"><span class="fa fa-google" aria-hidden="true" title="nhatminh190496@gmail.com"></span></a></li>
-							<li class="skype"><a href="skype:nhatminh190496?chat"><span class="fa fa-skype" aria-hidden="true" title="nhatminh190496"></span></a></li>
-						</ul>
-					</div>
-				</div>
-		</div>
-	</div>
+  <div class="col-md-12">
+    <div class="memberinfo">
+      <%= image_tag asset_url("slide2.jpg"), class:"img-fluid"%>
+        <div class="avatar">
+          <%= image_tag asset_url("defaultavatar.png"), class:"img-fluid"%>
+        </div>
+        <h4 class="text-center">User profile</h4>
+        <p>Name:
+          <%=@user.name%> <br>Email:
+            <%=@user.email%><br> Day of Birth:
+              <%=@user.dob%>
+        </p>
+        <div class="row">
+          <div class="col-md-12 wow bounceInLeft">
+            <%= link_to edit_user_registration_path(current_user) do %>
+              <button class="btn btn-primary btn-round">
+Edit your profile
+</button>
+              <%end%>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>

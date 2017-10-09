@@ -22,9 +22,9 @@
     <%end%>
   </div>
   <div class="blog-block col-lg-7">
-    <div class="blog-title">
+    <h1 class="text-center">
       <%= blog.tittle%>
-    </div>
+    </h1>
     <div class="row">
 
       <div class="blog-name col-lg-8">
@@ -41,13 +41,14 @@
     </div>
   </div>
 </div>
-
+<div class="comment">
 <%= render 'comments/new', blog: blog %>
 <h3> Comments list </h3>
 <div class="row">
   <div class="col-sm-12">
     <%= render blog.comments %>
   </div>
+</div>
 </div>
       </div>
       <div class="modal-footer">

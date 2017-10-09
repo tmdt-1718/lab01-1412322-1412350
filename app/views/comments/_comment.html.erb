@@ -1,11 +1,19 @@
-<div class="card">
-<div class="row">
-    <p>
+<div id="comment-block">
+<div class="row comment-content">
+  <div class="col-md-1 avatar">
+  <%= image_tag asset_url("defaultavatar.png"), class:"img-fluid"%>
+  </div>
+  <div class="col-md-11">
+    <div class="reviews">
+      <div class="username">
+      <p>
       <%= comment.user.name%>
     </p>
-    <div>
-    <p> <%=comment.content %>
+      </div>
+      <div class="comment">
+      <p> <%=comment.content %></p>
+      </div>
     </div>
+  </div>
 </div>
 </div>
-<hr />

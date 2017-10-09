@@ -5,10 +5,11 @@
         <%= image_tag blog.imgcover.thumb, class: "img-fluid mx-auto d-block" %>
       </div>
       <div class="middle">
-      
-        <button class="button" data-toggle="modal" data-target=#<%= blog.id%>>
+      <%= link_to user_blog_path(blog.user, blog) do%>
+        <button class="button" data-target=#<%= blog.id%>>
           View
         </button>
+        <%end%>
 
       </div>
       <p class="product-name">
